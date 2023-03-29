@@ -416,6 +416,7 @@ namespace ParaEngine
 	class CLightManager;
 	class CMeshObject;
 	class CMoviePlatform;
+	class CVideoPlayerPlatform;
 	class CMiniSceneGraph;
 	class CManagedLoader;
 	class CMissileObject;

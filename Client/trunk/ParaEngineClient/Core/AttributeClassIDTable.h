@@ -47,6 +47,7 @@ namespace ParaEngine
 		ATTRIBUTE_CLASSID_WeatherEffect,
 		ATTRIBUTE_CLASSID_CTerrainTileRoot,
 		ATTRIBUTE_CLASSID_CAudioEngine2,
+		ATTRIBUTE_CLASSID_VideoPlayer,
 		ATTRIBUTE_CLASSID_Last,
 	};
 }
