@@ -15,7 +15,7 @@ namespace ParaScripting
 		/** get the attribute object associated with an object. */
 		static ParaAttributeObject GetAttributeObject();
 
-		
+		static void PlayVideo(std::string uiname,std::string movie_path,int width,int height);
 
 	};
 }

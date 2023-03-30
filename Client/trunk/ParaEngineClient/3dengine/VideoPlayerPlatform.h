@@ -29,6 +29,8 @@ namespace ParaEngine
 		/** this class should be implemented if one wants to add new attribute. This function is always called internally.*/
 		virtual int InstallFields(CAttributeClass* pClass, bool bOverride);
 
+	public:
+
 	private:
 		IVideoPlayers* m_pVideoPlayer;
 		int m_nVideoPlayerVersion;

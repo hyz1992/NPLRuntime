@@ -74,7 +74,7 @@ IVideoPlayers* CVideoPlayerPlatform::GetVideoPlayers(bool bCreateIfNotExist)
 				if (pPluginEntity != 0 && pPluginEntity->IsValid())
 				{
 					m_nVideoPlayerVersion = pPluginEntity->GetLibVersion();
-					if (m_nVideoPlayerVersion >= 9)
+					if (m_nVideoPlayerVersion >= 1)
 					{
 						for (int i = 0; i < pPluginEntity->GetNumberOfClasses(); ++i)
 						{
@@ -100,5 +100,15 @@ IVideoPlayers* CVideoPlayerPlatform::GetVideoPlayers(bool bCreateIfNotExist)
 
 int CVideoPlayerPlatform::InstallFields(CAttributeClass* pClass, bool bOverride)
 {
-	return 0;
+	IAttributeFields::InstallFields(pClass, bOverride);
+
+	IVideoPlayers* pVideoplayer = GetVideoPlayers();
+	if (pVideoplayer)
+	{
+
+	}
+	//pClass->AddField("codec", FieldType_Int, (void*)SetCodec_s, (void*)GetCodec_s, NULL, NULL, bOverride);
+	//pClass->AddField("video_encode_example", FieldType_String, (void*)video_encode_example_s, NULL, NULL, NULL, bOverride);
+	
+	return S_OK;
 }

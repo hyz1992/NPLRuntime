@@ -54,6 +54,7 @@ extern "C"
 #include "luaSQLite.h"
 #include "ic/ICConfigManager.h"
 #include "ParaScriptingMovie.h"
+#include "ParaScriptingVideoPlayer.h"
 
 namespace ParaScripting
 {
@@ -481,6 +482,16 @@ void CNPLScriptingState::LoadHAPI_Globals()
 			def("IsRecording", & ParaScripting::ParaMovie::IsRecording)
 		]
 	];
+
+	module(L)
+		[
+			namespace_("ParaVideoPlayer")
+			[
+				// declarations
+				def("GetAttributeObject", &ParaScripting::ParaVideoPlayer::GetAttributeObject),
+				def("PlayVideo", &ParaScripting::ParaVideoPlayer::PlayVideo)
+			]
+		];
 
 	module(L)
 	[
