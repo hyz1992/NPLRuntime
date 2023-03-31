@@ -379,6 +379,8 @@ namespace ParaEngine
 		/** get the NPL runtime system associate with the application. NPL provides communication framework across different language systems. */
 		virtual NPL::INPLRuntime* GetNPLRuntime() = 0;
 
+		virtual lua_State* GetMainLuaState() = 0;
+
 		/** whether the last mouse input is from touch or mouse. by default it is mouse mode. */
 		virtual bool IsTouchInputting() = 0;
 

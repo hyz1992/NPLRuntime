@@ -334,6 +334,11 @@ NPL::INPLRuntime* ParaEngine::CParaEngineAppBase::GetNPLRuntime()
 	return CGlobals::GetNPLRuntime();
 }
 
+lua_State* ParaEngine::CParaEngineAppBase::GetMainLuaState()
+{
+	return CGlobals::GetNPLRuntime()->GetMainRuntimeState()->GetLuaState();
+}
+
 CRefCounted* ParaEngine::CParaEngineAppBase::AddToSingletonReleasePool(CRefCounted* pObject)
 {
 	if (!m_pSingletonReleasePool)

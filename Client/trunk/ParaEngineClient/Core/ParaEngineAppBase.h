@@ -371,6 +371,7 @@ namespace ParaEngine
 		/** get the NPL runtime system associate with the application. NPL provides communication framework across different language systems. */
 		virtual NPL::INPLRuntime* GetNPLRuntime();
 
+		virtual lua_State* GetMainLuaState();
 		/**
 		* we will automatically release singleton object when app stops, in the verse order when object is added to the pool.
 		*/

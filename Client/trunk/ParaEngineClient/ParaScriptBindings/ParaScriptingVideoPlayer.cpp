@@ -29,12 +29,12 @@ namespace ParaScripting
 		if (pVideo==nullptr) {
 			return;
 		}
-		CGlobals::GetGUI()->GetUIObject(uiname);
+		auto uiObject = CGlobals::GetGUI()->GetUIObject(uiname);
 		pVideo->PlayerCreate(0, width, height, 0, NULL);
-		pVideo->setCallback_onPosition([](int32_t id, ParaEngine::PlayerState* state) {
+		pVideo->setCallback_onPosition([uiObject](int32_t id, ParaEngine::PlayerState* state) {
 			std::cout << "setCallback_onPosition: " << state->position() << std::endl;
 		});
-		pVideo->setCallback_onVideoFrame(0,[](uint8 *frame,int width,int height){
+		pVideo->setCallback_onVideoFrame(0,[uiObject](uint8 *frame,int width,int height){
 			static std::vector<char> buf;
 			for (int i = 0; i < width; i++) {
 				for (int j = 0; j < height; j++) {

@@ -489,6 +489,9 @@ szBackground can be filename[; left top width height][:left top toright to botto
 */
 void ParaUIObject::SetBGImageStr(const char * szBackground)
 {
+	if (szBackground != NULL && strcmp(szBackground,"Texture/Aries/Creator/keepwork/Window/dakuang_32bits.png;0 0 440 93:378 43 33 44")==0) {
+		int i = 0;
+	}
 	if (szBackground==NULL||!IsValid()) 
 		return;
 	string temp=szBackground,filename;
@@ -2647,6 +2650,9 @@ ParaUIObject ParaUI::GetUIObjectAtPoint(int x,int y)
 
 ParaUIObject ParaUI::CreateUIObject(const char* strType, const char * strObjectName,const char * alignment, int x, int y, int width, int height)
 {
+	if (strObjectName!=NULL&&strcmp(strObjectName,"my_spr")==0) {
+		int i = 0;
+	}
 	//TODO: here is possible memory leak because nobody knows when to delete the new object if the object is not attached to something later.
 	CGUIBase* pNewObj=NULL; 
 
